@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1702775667 source:c:\users\soha\desktop\project_c\super_market\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<conio.h>
+
+1702955354 source:c:\users\soha\desktop\soha samy\project_c\super_market\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<conio.h>
+
+1703003062 source:c:\users\soha\desktop\soha samy kamel\super_market\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<conio.h>
+

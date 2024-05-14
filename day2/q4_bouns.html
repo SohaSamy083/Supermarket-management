@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("div").each(function () {
+                    $(this).text($(this).text() + " has been clicked.");
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div>Div 1</div>
+    <div>Div 2</div>
+    <div>Div 3</div>
+    <div>Div 4</div>
+
+    <button>Click all the divs</button>
+
+</body>
+
+</html>

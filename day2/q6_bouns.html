@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>question6</title>
+    <style>
+        #person {
+            width: 100px;
+            height: 100px;
+            background: url('person.jpeg');
+            cursor: move;
+        }
+
+        #ball {
+            width: 50px;
+            height: 50px;
+            background: url('ball.jpeg');
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="person"></div>
+    <div id="ball"></div>
+    <script>
+        $(function () {
+            var count = 0;
+            var makeDraggable = function (id) {
+                return $(id).draggable({
+                    start: function () {
+                        count++;
+                    },
+                    stop: function () {
+                        if (count < 5) {
+                            makeDraggable('#' + id.replace('#', 'ball.jpeg') + count);
+                        }
+                    }
+                });
+            };
+
+            makeDraggable('#ball');
+
+            $(document).on('mouseup', function () {
+                if (count >= 5) {
+                    $(document).off('mouseup');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

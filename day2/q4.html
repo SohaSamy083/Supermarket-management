@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>question4</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+    <script >
+        $(document).ready(function () {
+    // Create the div with initial values
+    var $div = $("<div>").css({
+        height: "100px",
+        width: "100px",
+        backgroundColor: "white",
+        color: "black"
+    });
+
+    // Animate the div with changing event and callback
+    $div.animate({
+        height: 300,
+        width: 400,
+        backgroundColor: "black",
+        color: "white"
+    }, {
+        duration: 2000,
+        easing: "swing",
+        change: function (prop, val) {
+            console.log("Property", prop, "changing to", val);
+        },
+        complete: function () {
+            console.log("Animation completed. Returning to original values...");
+            $div.animate({
+                height: 100,
+                width: 100,
+                backgroundColor: "white",
+                color: "black"
+            }, {
+                duration: 1000
+            });
+        }
+    });
+
+    // Append the div to the body
+    $("body").append($div);
+});
+
+
+    </script>
+
+</body>
+
+</html>

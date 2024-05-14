@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>question5</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+
+<body>
+    <div id="results"></div>
+
+    <script>
+        $(document).ready(function () {
+            // Send AJAX request
+            $.ajax({
+                url: "https://jsonplaceholder.typicode.com/todos",
+                method: "GET",
+                success: function (data) {
+                    // Build HTML for all to-do items
+                    var html = "";
+                    for (var i = 0; i < data.length; i++) {
+                        html += "<p>" + data[i].title + (data[i].completed ? " (completed)" : "") + "</p>";
+                    }
+
+                    // Print the results in the div
+                    $("#results").html(html);
+                
+                },
+                error: function (error) {
+                    console.error("Error fetching data:", error);
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

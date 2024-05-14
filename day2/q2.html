@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>questuion2</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+    <div id="drop" style="border: 2px solid red; width: 200px; height: 200px;"></div>
+    <img id="drag" src="img1.jpg" width="50" alt="">
+    <script>
+        $("#drag").draggable({
+            
+            revert: "invalid"
+        })
+        $("#drop").droppable({
+            accept: "#drag",
+            drop: function(event,ui){
+                if(ui.draggable.attr("id")=="drag")
+                {
+                    $(this).css("background-color","yellow")
+                }
+            }
+        })
+    </script>
+</body>
+</html>
